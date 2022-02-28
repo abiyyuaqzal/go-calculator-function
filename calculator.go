@@ -2,7 +2,7 @@ package gocalculatorfunction
 
 import "errors"
 
-func Calcualate(a, b float64, operation string) (float64, error) {
+func Calculate(a, b float64, operation string) (float64, error) {
 	var result float64
 	var errorResult error
 
