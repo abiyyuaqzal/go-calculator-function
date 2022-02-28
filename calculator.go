@@ -1,6 +1,9 @@
 package gocalculatorfunction
 
-import "errors"
+import (
+	"errors"
+	"fmt"
+)
 
 func Calculate(a, b float64, operation string) (float64, error) {
 	var result float64
@@ -14,7 +17,11 @@ func Calculate(a, b float64, operation string) (float64, error) {
 	case "*":
 		result = a * b
 	case "/":
-		result = a / b
+		if b == 0 {
+			fmt.Println("Indeterminate's Result")
+		} else {
+			result = a / b
+		}
 	default:
 		errorResult = errors.New("invalid operation")
 	}
